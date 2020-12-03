@@ -8,7 +8,7 @@ injectGlobal`
   body {
     font-family: "Inter", sans-serif;
   }
-  `;
+`;
 
 const Page = ({ children }) => {
   return (
