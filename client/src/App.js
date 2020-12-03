@@ -1,11 +1,10 @@
-import { GlobalStyles } from "twin.macro";
+import Page from "./components/Page";
 
 const App = () => {
   return (
-    <>
-      <GlobalStyles />
-      <div>hello moto</div>
-    </>
+    <Page>
+      <div>wrapped</div>
+    </Page>
   );
 };
 
