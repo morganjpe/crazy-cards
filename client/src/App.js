@@ -1,9 +1,10 @@
 import Page from "./components/Page";
+import Content from "./components/Content";
 
 const App = () => {
   return (
     <Page>
-      <div>wrapped</div>
+      <Content>wrapped</Content>
     </Page>
   );
 };
