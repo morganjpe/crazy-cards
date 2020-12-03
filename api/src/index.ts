@@ -3,6 +3,9 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 
+// routes
+import cardsRoutes from "./routes/cardsRoutes";
+
 dotenv.config();
 
 if (!process.env.PORT) {
@@ -19,6 +22,8 @@ app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
   res.send({ crazyCards: "connected" });
 });
+
+cardsRoutes(app);
 
 const server = app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
