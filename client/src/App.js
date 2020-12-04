@@ -1,6 +1,9 @@
 import Page from "./components/Page";
+
+// components
 import Content from "./components/Content";
 import CardList from "./components/CardList";
+import Form from "./components/Form";
 
 const App = () => {
   const MockCards = [
@@ -33,6 +36,7 @@ const App = () => {
   return (
     <Page>
       <Content>
+        <Form />
         <CardList cards={MockCards} />
       </Content>
     </Page>

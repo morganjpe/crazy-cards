@@ -5,7 +5,8 @@ const Content = ({ children }) => {
 };
 
 Content.Container = styled.section`
-  ${tw`mx-auto container`}
+  ${tw`mx-auto container flex`}
+  height: 100%;
 `;
 
 export default Content;

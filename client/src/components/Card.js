@@ -45,9 +45,9 @@ const Card = ({ card, status }) => {
 };
 
 Card.Container = styled.li`
+  ${tw`border-gray-200 border`}
   padding: 15px 15px 25px 15px;
   border-radius: 5px;
-  border: 1px solid #eee;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin-bottom: 30px;
