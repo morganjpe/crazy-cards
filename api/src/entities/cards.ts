@@ -35,12 +35,3 @@ export const MockCards: Cards = [
     creditAvailable: 3000,
   },
 ];
-// Student Life
-
-// Apr: 18.9%
-
-// Balance Transfer Offer Duration: 0 months
-
-// Purchase Offer Duration: 6 Months
-
-// Credit Available: £1200
