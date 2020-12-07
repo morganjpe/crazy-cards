@@ -10,17 +10,15 @@ const Header = () => (
 
 Header.Container = styled.header`
   /* background: linear-gradient(135deg, #42e695 0%, #3bb2b8 100%); */
-  padding: 3rem 0;
-  background: #0f0a3a;
 `;
 
 Header.Inner = styled.div`
-  ${tw`mx-auto container`}
+  ${tw`mx-auto container py-10 bg-blue-500`}
+  padding-left: 15px;
 `;
 
 Header.Title = styled.h1`
-  ${tw`text-4xl font-extrabold tracking-tight leading-relaxed`}
-  background-clip: text;
+  ${tw`text-4xl font-extrabold tracking-tight leading-relaxed text-white`}/* background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-left: var(--padding);
@@ -29,7 +27,7 @@ Header.Title = styled.h1`
   position: relative;
   z-index: 1;
   display: inline-block;
-  padding-right: 5px;
+  padding-right: 5px; */
 `;
 
 export default Header;

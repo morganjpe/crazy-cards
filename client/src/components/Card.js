@@ -1,16 +1,39 @@
 /** @jsxImportSource @emotion/react */
 import PropTypes from "prop-types";
-import tw, { styled } from "twin.macro";
+
+import tw, { styled, theme } from "twin.macro";
 
 const Card = ({ card, status }) => {
   const { apr, name, BTOD, POD, creditAvailable } = card;
+
+  const createGradient = () => {
+    const path = "linear-gradient(to top right";
+
+    switch (name) {
+      case "Student Life":
+        return `${path}, ${theme("colors.gradientDirty1")}, ${theme(
+          "colors.gradientDirty2"
+        )})`;
+      case "Anywhere Card":
+        return `${path}, ${theme("colors.gradientRed1")}, ${theme(
+          "colors.gradientRed2"
+        )})`;
+      case "Liquid Card":
+        return `${path}, ${theme("colors.gradientGreen1")}, ${theme(
+          "colors.gradientGreen2"
+        )})`;
+      default:
+        return "";
+    }
+  };
+
   return (
     <Card.Container>
       <Card.Title>{name}</Card.Title>
-      <Card.Eligible>
+      {/* <Card.Eligible>
         {status ? "You are eligible" : "Check Eligiblity"}
-      </Card.Eligible>
-      <Card.CreditCard>
+      </Card.Eligible> */}
+      <Card.CreditCard gradient={createGradient()}>
         <Card.CreditCard.Logo>
           <span />
           <span />
@@ -77,7 +100,8 @@ Card.CreditCard = styled.div`
   border-radius: 10px;
   width: 210px;
   height: 130px;
-  background: linear-gradient(135deg, #17ead9 0%, #6078ea 100%);
+  /* background: linear-gradient(135deg, #17ead9 0%, #6078ea 100%); */
+  background: ${({ gradient }) => gradient};
   border: 1px solid rgba(255, 255, 255, 0.5);
 
   &::after {
@@ -87,7 +111,7 @@ Card.CreditCard = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    background: linear-gradient(135deg, #17ead9 0%, #6078ea 100%);
+    background: ${({ gradient }) => gradient};
     filter: blur(8px);
     opacity: 0.5;
     z-index: -1;

@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import { postcodeValidator } from "postcode-validator";
 import PropTypes from "prop-types";
 
+// components
+import { Button } from "./Buttons";
+
 const Form = ({ setEligibilityCheck }) => {
   const { register, handleSubmit, errors } = useForm();
 
@@ -268,7 +271,7 @@ const Form = ({ setEligibilityCheck }) => {
         />
       </Form.Group>
 
-      <button>Submit</button>
+      <Button>Submit</Button>
     </Form.Container>
   );
 };
@@ -278,8 +281,8 @@ Form.propTypes = {
 };
 
 Form.Container = styled.form`
-  ${tw`w-full md:w-1/4`}
-  padding: 15px 15px 0 0;
+  ${tw`w-full md:w-1/4 bg-white`}
+  padding: 15px 15px 0 15px;
 `;
 
 Form.Group = styled.fieldset`

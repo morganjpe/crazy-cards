@@ -5,11 +5,13 @@ import Card from "./Card";
 
 const CardList = ({ cards }) => {
   return (
-    <CardList.Container>
-      {cards.map((card) => (
-        <Card key={`card-${card.id}`} card={card} />
-      ))}
-    </CardList.Container>
+    <>
+      <CardList.Container>
+        {cards.map((card) => (
+          <Card key={`card-${card.id}`} card={card} />
+        ))}
+      </CardList.Container>
+    </>
   );
 };
 
