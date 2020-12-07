@@ -16,9 +16,9 @@ const CardList = ({ cards }) => {
 };
 
 CardList.Container = styled.ol`
-  ${tw`w-full sm:w-full lg:w-3/4 bg-white flex border-l border-gray-200`}
+  ${tw`w-full lg:w-3/4 bg-white flex border-l border-gray-200`}
   flex-flow: column;
-  height: calc(100vh - 154px);
+  height: 1131px;
   padding: 15px;
 `;
 

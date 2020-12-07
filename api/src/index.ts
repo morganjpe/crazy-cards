@@ -1,5 +1,5 @@
 import * as dotenv from "dotenv";
-import express, { Request, Response } from "express";
+import express, { raw, Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 
@@ -20,7 +20,7 @@ app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-  res.send({ crazyCards: "connected" });
+  res.send({ connected: true });
 });
 
 cardsRoutes(app);
