@@ -259,6 +259,7 @@ const Form = ({ setEligibilityCheck }) => {
       <Form.Group>
         <label htmlFor="income">Your Annual Income (Pre Tax)</label>
         <input
+          ref={register({ required: true })}
           prefix="£"
           type="number"
           id="income"
