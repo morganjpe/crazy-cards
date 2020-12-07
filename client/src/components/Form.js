@@ -1,12 +1,13 @@
 import tw, { styled } from "twin.macro";
 import { useForm } from "react-hook-form";
 import { postcodeValidator } from "postcode-validator";
+import PropTypes from "prop-types";
 
-const Form = () => {
+const Form = ({ setEligibilityCheck }) => {
   const { register, handleSubmit, errors } = useForm();
 
   const submit = (data) => {
-    console.log(data);
+    setEligibilityCheck(data);
   };
 
   return (
@@ -269,6 +270,10 @@ const Form = () => {
       <button>Submit</button>
     </Form.Container>
   );
+};
+
+Form.propTypes = {
+  setEligibilityCheck: PropTypes.func.isRequired,
 };
 
 Form.Container = styled.form`
