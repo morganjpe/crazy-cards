@@ -132,7 +132,6 @@ Card.CreditCard = styled.div`
   border-radius: 10px;
   width: 210px;
   height: 130px;
-  /* background: linear-gradient(135deg, #17ead9 0%, #6078ea 100%); */
   background: ${({ gradient }) => gradient};
   border: 1px solid rgba(255, 255, 255, 0.5);
 
