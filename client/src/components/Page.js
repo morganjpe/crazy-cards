@@ -8,7 +8,7 @@ injectGlobal`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;800&display=swap");
   body {
     font-family: "Inter", sans-serif;
-    ${tw`bg-gray-100`}
+    ${tw`bg-gray-50`}
   }
 `;
 

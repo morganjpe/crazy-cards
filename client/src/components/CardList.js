@@ -16,7 +16,7 @@ const CardList = ({ cards }) => {
 };
 
 CardList.Container = styled.ol`
-  ${tw`w-full md:w-3/4 bg-gray-50 flex border-l border-gray-200`}
+  ${tw`w-full sm:w-full lg:w-3/4 bg-white flex border-l border-gray-200`}
   flex-flow: column;
   height: calc(100vh - 154px);
   padding: 15px;

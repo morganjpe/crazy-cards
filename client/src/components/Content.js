@@ -5,7 +5,7 @@ const Content = ({ children }) => {
 };
 
 Content.Container = styled.section`
-  ${tw`mx-auto container flex`}
+  ${tw`mx-auto container flex flex-wrap`}
   height: 100%;
 `;
 

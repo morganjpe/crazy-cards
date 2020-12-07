@@ -13,7 +13,7 @@ Header.Container = styled.header`
 `;
 
 Header.Inner = styled.div`
-  ${tw`mx-auto container py-10 bg-blue-500`}
+  ${tw`mx-auto container py-10 bg-blue-900`}
   padding-left: 15px;
 `;
 

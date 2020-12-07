@@ -30,9 +30,6 @@ const Card = ({ card, status }) => {
   return (
     <Card.Container>
       <Card.Title>{name}</Card.Title>
-      {/* <Card.Eligible>
-        {status ? "You are eligible" : "Check Eligiblity"}
-      </Card.Eligible> */}
       <Card.CreditCard gradient={createGradient()}>
         <Card.CreditCard.Logo>
           <span />
@@ -71,16 +68,37 @@ Card.Container = styled.li`
   ${tw`border-gray-200 border`}
   padding: 15px 15px 25px 15px;
   border-radius: 5px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
   margin-bottom: 30px;
   background-color: white;
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (min-width: ${theme`screens.md`}) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @media (min-width: ${theme`screens.lg`}) {
+    grid-template-columns: repeat(12, 1fr);
+  }
 `;
 
 Card.Title = styled.h3`
   ${tw`text-2xl font-bold leading-loose mb-2`}
-  grid-column: 1 / 10;
+  grid-column: 1 / 4;
   grid-row: 1;
+  text-align: center;
+
+  @media (min-width: ${theme`screens.md`}) {
+    grid-column: 1 / 7;
+    grid-row: 1;
+    text-align: left;
+  }
+
+  @media (min-width: ${theme`screens.lg`}) {
+    grid-column: 1 / 10;
+    grid-row: 1;
+  }
 `;
 
 Card.Eligible = styled.div`
@@ -94,6 +112,20 @@ Card.Eligible = styled.div`
 Card.CreditCard = styled.div`
   grid-row: 2 / span 2;
   grid-column: 1 / 4;
+  margin: 0 auto;
+
+  @media (min-width: ${theme`screens.md`}) {
+    margin: initial;
+    grid-row: 2 / span 2;
+    grid-column: 1 / 4;
+  }
+
+  @media (min-width: ${theme`screens.lg`}) {
+    margin: initial;
+    grid-row: 2 / span 2;
+    grid-column: 1 / 4;
+  }
+
   width: 100%;
   position: relative;
   z-index: 10;
@@ -140,12 +172,33 @@ Card.CreditCard.Logo = styled.div`
 `;
 
 Card.List = styled.ul`
-  grid-row: 2 / 4;
-  grid-column: 4 / 12;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  grid-row: 4 / span 3;
+  grid-column: 1 / 4;
+
   li {
-    padding: 0 15px;
+    width: 50%;
+    padding: 30px 15px 0 15px;
+  }
+
+  @media (min-width: ${theme`screens.md`}) {
+    grid-row: 4 / span 3;
+    grid-column: 1 / 7;
+    flex-wrap: nowrap;
+    li {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: ${theme`screens.lg`}) {
+    grid-row: 2;
+    grid-column: 4 / 12;
+    flex-wrap: nowrap;
+    li {
+      width: 100%;
+    }
   }
 `;
 

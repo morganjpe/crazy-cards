@@ -281,7 +281,7 @@ Form.propTypes = {
 };
 
 Form.Container = styled.form`
-  ${tw`w-full md:w-1/4 bg-white`}
+  ${tw`w-full lg:w-1/4 bg-white`}
   padding: 15px 15px 0 15px;
 `;
 
