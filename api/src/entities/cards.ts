@@ -1,3 +1,8 @@
+type EligibiliyCriteria = {
+  employmentStatus?: string;
+  income?: number;
+};
+
 type Card = {
   id: number;
   apr: number;
@@ -5,6 +10,7 @@ type Card = {
   BTOD: number;
   POD: number;
   creditAvailable: number;
+  successCriteria: EligibiliyCriteria;
 };
 
 type Cards = Card[];
@@ -17,6 +23,7 @@ export const MockCards: Cards = [
     BTOD: 0,
     POD: 6,
     creditAvailable: 1200,
+    successCriteria: { employmentStatus: "student" },
   },
   {
     id: 2,
@@ -25,6 +32,7 @@ export const MockCards: Cards = [
     BTOD: 0,
     POD: 6,
     creditAvailable: 300,
+    successCriteria: {},
   },
   {
     id: 3,
@@ -33,5 +41,6 @@ export const MockCards: Cards = [
     BTOD: 12,
     POD: 6,
     creditAvailable: 3000,
+    successCriteria: { income: 16000 },
   },
 ];

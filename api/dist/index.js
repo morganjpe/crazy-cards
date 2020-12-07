@@ -9,20 +9,64 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/controllers/cardsController.ts":
+/*!********************************************!*\
+  !*** ./src/controllers/cardsController.ts ***!
+  \********************************************/
+/*! flagged exports */
+/*! export __esModule [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export getAllCards [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__ */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.getAllCards = void 0;\nvar cards_1 = __webpack_require__(/*! ../entities/cards */ \"./src/entities/cards.ts\");\nvar getAllCards = function (req, res) {\n    setTimeout(function () {\n        res.send(cards_1.MockCards);\n    }, 500);\n};\nexports.getAllCards = getAllCards;\n\n\n//# sourceURL=webpack:///./src/controllers/cardsController.ts?");
+
+/***/ }),
+
+/***/ "./src/entities/cards.ts":
+/*!*******************************!*\
+  !*** ./src/entities/cards.ts ***!
+  \*******************************/
+/*! flagged exports */
+/*! export MockCards [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export __esModule [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__ */
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.MockCards = void 0;\nexports.MockCards = [\n    {\n        id: 1,\n        name: \"Student Life\",\n        apr: 18.9,\n        BTOD: 0,\n        POD: 6,\n        creditAvailable: 1200,\n        successCriteria: { employmentStatus: \"student\" },\n    },\n    {\n        id: 2,\n        name: \"Anywhere Card\",\n        apr: 33.9,\n        BTOD: 0,\n        POD: 6,\n        creditAvailable: 300,\n        successCriteria: {},\n    },\n    {\n        id: 3,\n        name: \"Liquid Card\",\n        apr: 33.9,\n        BTOD: 12,\n        POD: 6,\n        creditAvailable: 3000,\n        successCriteria: { income: 16000 },\n    },\n];\n\n\n//# sourceURL=webpack:///./src/entities/cards.ts?");
+
+/***/ }),
+
 /***/ "./src/index.ts":
 /*!**********************!*\
   !*** ./src/index.ts ***!
   \**********************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: top-level-this-exports, __webpack_exports__, __webpack_require__, module */
-/*! CommonJS bailout: this is used directly at 2:23-27 */
-/*! CommonJS bailout: this is used directly at 9:26-30 */
-/*! CommonJS bailout: this is used directly at 14:20-24 */
-/*! CommonJS bailout: this is used directly at 21:23-27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n}) : function(o, v) {\n    o[\"default\"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar dotenv = __importStar(__webpack_require__(/*! dotenv */ \"dotenv\"));\nvar express_1 = __importDefault(__webpack_require__(/*! express */ \"express\"));\nvar cors_1 = __importDefault(__webpack_require__(/*! cors */ \"cors\"));\nvar helmet_1 = __importDefault(__webpack_require__(/*! helmet */ \"helmet\"));\ndotenv.config();\nif (!process.env.PORT) {\n    process.exit(1);\n}\nvar PORT = parseInt(process.env.PORT, 10);\nvar app = express_1.default();\napp.use(helmet_1.default());\napp.use(cors_1.default());\napp.use(express_1.default.json());\napp.get(\"/\", function (req, res) {\n    res.send({ crazyCards: \"connected\" });\n});\nvar server = app.listen(PORT, function () {\n    console.log(\"Listening on port \" + PORT);\n});\nif (true) {\n    module.hot.accept();\n    module.hot.dispose(function () { return server.close(); });\n}\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+eval("\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n}) : function(o, v) {\n    o[\"default\"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar dotenv = __importStar(__webpack_require__(/*! dotenv */ \"dotenv\"));\nvar express_1 = __importDefault(__webpack_require__(/*! express */ \"express\"));\nvar cors_1 = __importDefault(__webpack_require__(/*! cors */ \"cors\"));\nvar helmet_1 = __importDefault(__webpack_require__(/*! helmet */ \"helmet\"));\n// routes\nvar cardsRoutes_1 = __importDefault(__webpack_require__(/*! ./routes/cardsRoutes */ \"./src/routes/cardsRoutes.ts\"));\ndotenv.config();\nif (!process.env.PORT) {\n    process.exit(1);\n}\nvar PORT = parseInt(process.env.PORT, 10);\nvar app = express_1.default();\napp.use(helmet_1.default());\napp.use(cors_1.default({ origin: \"http://localhost:3001\" }));\napp.use(express_1.default.json());\napp.get(\"/\", function (req, res) {\n    res.send({ crazyCards: \"connected\" });\n});\ncardsRoutes_1.default(app);\nvar server = app.listen(PORT, function () {\n    console.log(\"Listening on port \" + PORT);\n});\nif (true) {\n    module.hot.accept();\n    module.hot.dispose(function () { return server.close(); });\n}\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+
+/***/ }),
+
+/***/ "./src/routes/cardsRoutes.ts":
+/*!***********************************!*\
+  !*** ./src/routes/cardsRoutes.ts ***!
+  \***********************************/
+/*! flagged exports */
+/*! export __esModule [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__ */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\n// contollers\nvar cardsController_1 = __webpack_require__(/*! ../controllers/cardsController */ \"./src/controllers/cardsController.ts\");\nexports.default = (function (app) {\n    app.get(\"/cards\", cardsController_1.getAllCards);\n});\n\n\n//# sourceURL=webpack:///./src/routes/cardsRoutes.ts?");
 
 /***/ }),
 
@@ -172,7 +216,7 @@ eval("module.exports = require(\"helmet\");;\n\n//# sourceURL=webpack:///externa
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "da7a7d90eb28248101c5"
+/******/ 		__webpack_require__.h = () => "319b1a112b8c99aa659a"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
