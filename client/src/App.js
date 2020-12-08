@@ -16,6 +16,10 @@ const App = () => {
     filtered: [],
   });
 
+  /**
+   * filters the cards based on users eligibility
+   * @return {array} - array of filtered cards
+   */
   const filterCache = () => {
     return cards.cache.filter(({ successCriteria }) => {
       if (isEmpty(successCriteria)) return true;
@@ -36,12 +40,15 @@ const App = () => {
 
   useEffect(() => {
     if (!cards.cache.length) {
-      axios.get("http://localhost:7000/cards").then(({ data }) => {
-        setCards({
-          cache: data,
-          filtered: data,
-        });
-      });
+      axios
+        .get("http://localhost:7000/cards")
+        .then(({ data }) => {
+          setCards({
+            cache: data,
+            filtered: [],
+          });
+        })
+        .catch((err) => console.log(err));
     }
 
     if (!isEmpty(eligiblityCheck)) {
@@ -53,7 +60,9 @@ const App = () => {
     <Page>
       <Content>
         <Form setEligibilityCheck={setEligibilityCheck} />
-        <CardList cards={cards.filtered} />
+        <CardList
+          cards={cards.filtered.length ? cards.filtered : cards.cache}
+        />
       </Content>
     </Page>
   );

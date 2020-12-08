@@ -6,6 +6,10 @@ import tw, { styled, theme } from "twin.macro";
 const Card = ({ card, status }) => {
   const { apr, name, BTOD, POD, creditAvailable } = card;
 
+  /**
+   * Creates a gradient string based on theme properties
+   * @returns {string} - gradient string
+   */
   const createGradient = () => {
     const path = "linear-gradient(to top right";
 

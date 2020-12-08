@@ -12,6 +12,11 @@ const Form = ({ setEligibilityCheck }) => {
 
   const [expanded, setExpanded] = useState(false);
 
+  /**
+   * Submit the data from the form
+   * @param {Object} data - passed from form
+   * @returns {void}
+   */
   const submit = (data) => {
     setEligibilityCheck(data);
     setExpanded(!expanded);
