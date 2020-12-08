@@ -60,9 +60,7 @@ const App = () => {
     <Page>
       <Content>
         <Form setEligibilityCheck={setEligibilityCheck} />
-        <CardList
-          cards={cards.filtered.length ? cards.filtered : cards.cache}
-        />
+        <CardList cards={cards} />
       </Content>
     </Page>
   );

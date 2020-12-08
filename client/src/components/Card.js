@@ -32,7 +32,7 @@ const Card = ({ card, status }) => {
   };
 
   return (
-    <Card.Container>
+    <Card.Container status={status}>
       <Card.Title>{name}</Card.Title>
       <Card.CreditCard gradient={createGradient()}>
         <Card.CreditCard.Logo>
@@ -69,11 +69,17 @@ const Card = ({ card, status }) => {
 };
 
 Card.Container = styled.li`
-  ${tw`border-gray-200 border`}
+  ${({ status }) => {
+    if (status === 0) {
+      return tw`border-gray-200 border bg-white`;
+    } else {
+      return tw`border-green-200 border bg-green-50`;
+    }
+  }}
   padding: 15px 15px 25px 15px;
   border-radius: 5px;
   margin-bottom: 30px;
-  background-color: white;
+
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
@@ -214,7 +220,7 @@ Card.propTypes = {
     POD: PropTypes.number.isRequired,
     creditAvailable: PropTypes.number.isRequired,
   }),
-  status: PropTypes.bool,
+  status: PropTypes.number.isRequired,
 };
 
 export default Card;
