@@ -76,19 +76,18 @@ Card.Container = styled.li`
       return tw`border-green-200 border bg-green-50`;
     }
   }}
+
   padding: 15px 15px 25px 15px;
   border-radius: 5px;
   margin-bottom: 30px;
-
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
 
-  @media (min-width: ${theme`screens.md`}) {
+  @media (min-width: ${theme`screens.lg`}) {
     grid-template-columns: repeat(6, 1fr);
   }
 
-  @media (min-width: ${theme`screens.lg`}) {
+  @media (min-width: ${theme`screens.xl`}) {
     grid-template-columns: repeat(12, 1fr);
   }
 `;
@@ -99,13 +98,13 @@ Card.Title = styled.h3`
   grid-row: 1;
   text-align: center;
 
-  @media (min-width: ${theme`screens.md`}) {
+  @media (min-width: ${theme`screens.lg`}) {
     grid-column: 1 / 7;
     grid-row: 1;
     text-align: left;
   }
 
-  @media (min-width: ${theme`screens.lg`}) {
+  @media (min-width: ${theme`screens.xl`}) {
     grid-column: 1 / 10;
     grid-row: 1;
   }
@@ -124,13 +123,13 @@ Card.CreditCard = styled.div`
   grid-column: 1 / 4;
   margin: 0 auto;
 
-  @media (min-width: ${theme`screens.md`}) {
+  @media (min-width: ${theme`screens.lg`}) {
     margin: initial;
     grid-row: 2 / span 2;
     grid-column: 1 / 4;
   }
 
-  @media (min-width: ${theme`screens.lg`}) {
+  @media (min-width: ${theme`screens.xl`}) {
     margin: initial;
     grid-row: 2 / span 2;
     grid-column: 1 / 4;
@@ -192,7 +191,7 @@ Card.List = styled.ul`
     padding: 30px 15px 0 15px;
   }
 
-  @media (min-width: ${theme`screens.md`}) {
+  @media (min-width: ${theme`screens.lg`}) {
     grid-row: 4 / span 3;
     grid-column: 1 / 7;
     flex-wrap: nowrap;
@@ -201,7 +200,7 @@ Card.List = styled.ul`
     }
   }
 
-  @media (min-width: ${theme`screens.lg`}) {
+  @media (min-width: ${theme`screens.xl`}) {
     grid-row: 2;
     grid-column: 4 / 12;
     flex-wrap: nowrap;
