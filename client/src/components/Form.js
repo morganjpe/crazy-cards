@@ -3,9 +3,19 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { postcodeValidator } from "postcode-validator";
 import PropTypes from "prop-types";
+import { ErrorBoundary } from "react-error-boundary";
 
 // components
 import { Button } from "./Buttons";
+
+const FormError = ({ resetErrorBoundary }) => {
+  return (
+    <div>
+      <p>There has been an error</p>
+      <Button onClick={resetErrorBoundary}>Reset Form</Button>
+    </div>
+  );
+};
 
 const Form = ({ setEligibilityCheck }) => {
   const { register, handleSubmit, errors } = useForm();
@@ -23,7 +33,12 @@ const Form = ({ setEligibilityCheck }) => {
   };
 
   return (
-    <>
+    <ErrorBoundary
+      onReset={() => {
+        setExpanded(false);
+      }}
+      FallbackComponent={FormError}
+    >
       <Form.MobileButton
         status={expanded}
         onClick={() => setExpanded(!expanded)}
@@ -291,7 +306,7 @@ const Form = ({ setEligibilityCheck }) => {
 
         <Button>Submit</Button>
       </Form.Container>
-    </>
+    </ErrorBoundary>
   );
 };
 
